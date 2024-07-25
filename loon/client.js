@@ -12,6 +12,13 @@ if (req.method != 'OPTIONS' && req.headers && req.headers.Host == 'api.m.jd.com'
             console.log(data);
         });
     }
+    const ptItems = cookieVal.match(/pt_key=(.+?);/);
+    console.log(ptItems);
+    if (ptItems && ptItems.length == 2) {
+        $httpClient.get(`http://192.168.50.3:15307/jd?pt_key=${ptItems[1]}`, function (error, response, data) {
+            console.log(data);
+        });
+    }
 } else {
     throw new Error("req wrong");
 }
