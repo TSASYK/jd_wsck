@@ -8,7 +8,7 @@ if (req.method != 'OPTIONS' && req.headers && req.headers.Host == 'api.m.jd.com'
     const ptItems = cookieVal.match(/pt_key=(.+?);/);
     console.log(ptItems);
     if (ptItems && ptItems.length == 2) {
-        $httpClient.get(`http://mylittle.domain:15307/jd?pt_key=${ptItems[1]}`, function (error, response, data) {
+        $httpClient.get(`http://mylittle.domain:8357/jd?pt_key=${ptItems[1]}`, function (error, response, data) {
             console.log(data);
         });
         return;
@@ -16,7 +16,7 @@ if (req.method != 'OPTIONS' && req.headers && req.headers.Host == 'api.m.jd.com'
     const ckItems = cookieVal.match(/wskey=(.+?);/);
     console.log(ckItems);
     if (ckItems && ckItems.length == 2) {
-        $httpClient.get(`http://mylittle.domain:15307/jd?wsck=${ckItems[1]}`, function (error, response, data) {
+        $httpClient.get(`http://mylittle.domain:8357/jd?wsck=${ckItems[1]}`, function (error, response, data) {
             console.log(data);
         });
         return;
